@@ -115,18 +115,16 @@ export const login = async (req, res) => {
       token: token,
     };
 
-    return res
-      .status(200)
-      .cookie("token", token, {
-        maxAge: 1 * 24 * 60 * 60 * 1000,
-        httpOnly: true,
-        sameSite: "strict",
-      })
-      .json({
-        success: true,
-        message: `Welcome back ${user.name}`,
-        user: userData,
-      });
+    return res.status(200).cookie("token", token, {
+      maxAge: 1 * 24 * 60 * 60 * 1000,
+      httpOnly: true,
+      sameSite: "none",
+      secure: true,
+    }).json({
+      success: true,
+      message: `Welcome back ${user.name}`,
+      user: userData,
+    });
   } catch (error) {
     console.log(error);
     return res.status(500).json({
@@ -138,7 +136,11 @@ export const login = async (req, res) => {
 
 export const logout = async (req, res) => {
   try {
-    return res.status(200).cookie("token", "", { maxAge: 0 }).json({
+    return res.status(200).cookie("token", "", {
+      maxAge: 0,
+      sameSite: "none",
+      secure: true
+    }).json({
       success: true,
       message: "Logged Out Successfully",
     });
