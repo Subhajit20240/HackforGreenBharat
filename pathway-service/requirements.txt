@@ -1,2 +1,4 @@
-pathway
+flask
+flask-cors
 requests
+gunicorn
