@@ -98,7 +98,8 @@ def receive_inputs():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    print("🚀 Starting Mock Pathway Service on port 8081...")
+    port = int(os.environ.get("PORT", 8081))
+    print(f"🚀 Starting Mock Pathway Service on port {port}...")
     print("🔓 CORS Enabled for all origins")
     print(f"📡 Sending alerts to: {BACKEND_URL}")
-    app.run(host='0.0.0.0', port=8081, debug=False)
+    app.run(host='0.0.0.0', port=port, debug=False)

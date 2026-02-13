@@ -19,7 +19,7 @@ const PathwayListener = () => {
           // Send to Pathway (Directly to Python Service)
           // Note: In production, this might go through a backend proxy to avoid CORS if not configured
           // For hackathon, we assume direct access or proxy via vite
-          axios.post("http://localhost:8081/v1/inputs", {
+          axios.post("https://hackforgreenbharat-1.onrender.com/v1/inputs", {
             user_id,
             lat: latitude,
             lon: longitude,
@@ -59,7 +59,7 @@ const PathwayListener = () => {
       lat: 28.7041,
       lon: 77.1025
     };
-    axios.post("http://localhost:8081/v1/inputs", highPollutionLocation)
+    axios.post("https://hackforgreenbharat-1.onrender.com/v1/inputs", highPollutionLocation)
       .then(() => toast.success("Simulated: Moved to Delhi (High Pollution) 🚀"))
       .catch(err => toast.error("Simulation Failed"));
   };
@@ -70,7 +70,7 @@ const PathwayListener = () => {
       lat: 12.9716, // Bangalore approx
       lon: 77.5946
     };
-    axios.post("http://localhost:8081/v1/inputs", cleanLocation)
+    axios.post("https://hackforgreenbharat-1.onrender.com/v1/inputs", cleanLocation)
       .then(() => toast.success("Simulated: Moved to Bangalore (Clean) 🌿"))
       .catch(err => toast.error("Simulation Failed"));
   }

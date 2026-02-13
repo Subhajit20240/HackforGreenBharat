@@ -39,7 +39,7 @@ const PathwayDashboard = () => {
       ? { user_id: 'demo_user', lat: 28.7041, lon: 77.1025 }
       : { user_id: 'demo_user', lat: 12.9716, lon: 77.5946 };
       
-    axios.post("http://localhost:8081/v1/inputs", loc)
+    axios.post("https://hackforgreenbharat-1.onrender.com/v1/inputs", loc)
       .then(() => toast.success(`Simulated ${type === 'danger' ? 'High Pollution Point' : 'Clean Point'}`))
       .catch((e) => toast.error("Failed to send: " + e.message));
   };
