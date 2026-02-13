@@ -23,6 +23,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://ecosense-8.onrender.com",
+      "https://timely-pastelito-b3d105.netlify.app",
     ],
     credentials: true,
   })

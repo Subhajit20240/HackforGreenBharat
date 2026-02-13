@@ -67,6 +67,7 @@ const Navbar = () => {
 
   const mainNavLinks = [
     { path: "/bill-scanner", label: "Scanner", icon: LayoutDashboard },
+    {path:"/pathway-demo",label:"Pathway Demo",icon:DatabaseIcon},
     { path: "/dashboard", label: "Dashboard", icon: Database },
     { path: "/recommendations", label: "Eco Products", icon: Gamepad2 },
     { path: "/chat", label: "EcoBot", icon: Trophy },
