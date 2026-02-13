@@ -78,7 +78,7 @@ const LiveAQISection = () => {
     // 2. Poll Pathway for "Live Stream" overrides
     const interval = setInterval(async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/v9/alert");
+        const res = await fetch("https://hackforgreenbharat.onrender.com/api/v9/alert");
         const json = await res.json();
         
         if (json.success && json.data) {

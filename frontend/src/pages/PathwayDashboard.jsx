@@ -12,7 +12,7 @@ const PathwayDashboard = () => {
   useEffect(() => {
     const pollInterval = setInterval(async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/v9/alert");
+        const res = await axios.get("https://hackforgreenbharat.onrender.com/api/v9/alert");
         if (res.data.success && res.data.data) {
           const newData = res.data.data;
           setMetrics(newData);

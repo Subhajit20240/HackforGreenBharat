@@ -84,7 +84,7 @@ const MyChallenges = () => {
 
   const handleAccept = async (id) => {
     try {
-      await fetch(`http://localhost:3000/api/v6/accept/${id}`, {
+      await fetch(`${serverUrl}/api/v6/accept/${id}`, {
         method: "POST",
         credentials: "include",
       });
@@ -98,7 +98,7 @@ const MyChallenges = () => {
 
   const handleDecline = async (id) => {
     try {
-      await fetch(`http://localhost:3000/api/v6/decline/${id}`, {
+      await fetch(`${serverUrl}/api/v6/decline/${id}`, {
         method: "POST",
         credentials: "include",
       });
